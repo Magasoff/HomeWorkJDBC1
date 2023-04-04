@@ -12,7 +12,7 @@ public class Application {
 
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM employee WHERE ID = (?)")) {
-            statement.setInt(1, 2);
+            statement.setInt(1, 4);
             final ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
