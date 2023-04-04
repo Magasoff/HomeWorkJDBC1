@@ -12,19 +12,19 @@ public class Application {
 
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM employee WHERE ID = (?)")) {
-            statement.setInt(1, 2);
+            statement.setInt(1, 4);
             final ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                String name = "Name" + resultSet.getString("имя");
-                String lastname = "Family" + resultSet.getString("фамилия");
-                String gender = "Gender" + resultSet.getString(4);
+                String name = "Имя: " + resultSet.getString("имя");
+                String lastname = "Семья: " + resultSet.getString("фамилия");
+                String gender = "Пол: " + resultSet.getString(4);
                 int age = resultSet.getInt(5);
 
                 System.out.println(name);
                 System.out.println(lastname);
                 System.out.println(gender);
-                System.out.println("age" + age);
+                System.out.println("Возраст: " + age);
             }
         }
     }
