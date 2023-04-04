@@ -16,15 +16,15 @@ public class Application {
             final ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                String name = "Имя " + resultSet.getString("имя");
-                String lastname = "Семья " + resultSet.getString("фамилия");
-                String gender = "Пол " + resultSet.getString(4);
+                String name = "Имя: " + resultSet.getString("имя");
+                String lastname = "Семья: " + resultSet.getString("фамилия");
+                String gender = "Пол: " + resultSet.getString(4);
                 int age = resultSet.getInt(5);
 
                 System.out.println(name);
                 System.out.println(lastname);
                 System.out.println(gender);
-                System.out.println("Возраст " + age);
+                System.out.println("Возраст: " + age);
             }
         }
     }
